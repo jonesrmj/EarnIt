@@ -11,7 +11,7 @@ import SwiftUI
 struct EarnItApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ChoreListView()
         }
     }
 }
