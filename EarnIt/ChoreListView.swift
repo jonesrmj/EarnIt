@@ -23,12 +23,6 @@ struct ChoreListView: View {
             .onDelete(perform: self.deleteChore)
           }
           .listStyle(InsetGroupedListStyle())
-          .sheet(isPresented: $isAddChorePresented) {
-            AddChoreView { description, amount in
-              self.addChore(description: description, amount: amount)
-              self.isAddChorePresented = false
-            }
-          }
         } else {
           List {
             ForEach(self.choreStore.chore) { chore in
@@ -37,12 +31,6 @@ struct ChoreListView: View {
             .onDelete(perform: self.deleteChore)
           }
           .listStyle(InsetGroupedListStyle())
-          .sheet(isPresented: $isAddChorePresented) {
-            AddChoreView { description, amount in
-              self.addChore(description: description, amount: amount)
-              self.isAddChorePresented = false
-            }
-          }
         }
       }
       .navigationBarTitle(Text("Chores"))
@@ -62,6 +50,12 @@ struct ChoreListView: View {
         }
       )
     }
+    .sheet(isPresented: self.$isAddChorePresented) {
+      AddChoreView(isAddChorePresented: self.$isAddChorePresented) { description, amount in
+        self.addChore(description: description, amount: amount)
+        self.isAddChorePresented = false
+      }
+    }
   }
   
   func deleteChore(at offSets: IndexSet) {
@@ -69,13 +63,15 @@ struct ChoreListView: View {
   }
   
   func addChore(description: String, amount: Double) {
-    let newChore = Chore(description: description, amount: amount)
+    let newChore = Chore(id: String(choreStore.chore.count + 1), description: description, amount: amount)
     choreStore.chore.append(newChore)
   }
 }
 
+/*
 struct ChoreListView_Previews: PreviewProvider {
   static var previews: some View {
     ChoreListView()
   }
 }
+*/
