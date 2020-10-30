@@ -17,15 +17,15 @@ struct ChoreListView: View {
       VStack {
         if #available(iOS 14.0, *) {
           List {
-            ForEach(self.choreStore.chore) { chore in
-              Text(chore.description + " | $" + String(chore.amount))
+            ForEach(self.choreStore.chores, id: \.id) {
+              ChoreRowView(chore: $0)
             }
             .onDelete(perform: self.deleteChore)
           }
           .listStyle(InsetGroupedListStyle())
         } else {
           List {
-            ForEach(self.choreStore.chore) { chore in
+            ForEach(self.choreStore.chores) { chore in
               Text(chore.description + " | " + String(chore.amount))
             }
             .onDelete(perform: self.deleteChore)
@@ -59,12 +59,12 @@ struct ChoreListView: View {
   }
   
   func deleteChore(at offSets: IndexSet) {
-    choreStore.chore.remove(atOffsets: offSets)
+    choreStore.chores.remove(atOffsets: offSets)
   }
   
   func addChore(description: String, amount: Double) {
-    let newChore = Chore(id: String(choreStore.chore.count + 1), description: description, amount: amount)
-    choreStore.chore.append(newChore)
+    let newChore = Chore(id: String(choreStore.chores.count + 1), description: description, amount: amount)
+    choreStore.chores.append(newChore)
   }
 }
 

@@ -16,5 +16,5 @@ struct Chore : Identifiable {
 }
 
 class ChoreStore : ObservableObject {
-  @Published var chore = [Chore]()
+  @Published var chores: [Chore] = []
 }

@@ -13,6 +13,7 @@
 		698D8D62252B6C46001DB532 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698D8D61252B6C46001DB532 /* Preview Assets.xcassets */; };
 		698D8D6D252B6C46001DB532 /* EarnItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D8D6C252B6C46001DB532 /* EarnItTests.swift */; };
 		698D8D78252B6C46001DB532 /* EarnItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D8D77252B6C46001DB532 /* EarnItUITests.swift */; };
+		69A1753D254AF97D009B6E3C /* ChoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1753C254AF97D009B6E3C /* ChoreRowView.swift */; };
 		69FB82C8253CC568003B7D02 /* Chore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FB82C7253CC568003B7D02 /* Chore.swift */; };
 		69FB82D0253CC838003B7D02 /* AddChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FB82CF253CC838003B7D02 /* AddChoreView.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		698D8D73252B6C46001DB532 /* EarnItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EarnItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		698D8D77252B6C46001DB532 /* EarnItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarnItUITests.swift; sourceTree = "<group>"; };
 		698D8D79252B6C46001DB532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69A1753C254AF97D009B6E3C /* ChoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRowView.swift; sourceTree = "<group>"; };
 		69FB82C7253CC568003B7D02 /* Chore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chore.swift; sourceTree = "<group>"; };
 		69FB82CF253CC838003B7D02 /* AddChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +104,7 @@
 				698D8D5A252B6C45001DB532 /* EarnItApp.swift */,
 				69FB82C7253CC568003B7D02 /* Chore.swift */,
 				698D8D5C252B6C45001DB532 /* ChoreListView.swift */,
+				69A1753C254AF97D009B6E3C /* ChoreRowView.swift */,
 				69FB82CF253CC838003B7D02 /* AddChoreView.swift */,
 				698D8D5E252B6C46001DB532 /* Assets.xcassets */,
 				698D8D63252B6C46001DB532 /* Info.plist */,
@@ -267,6 +270,7 @@
 			files = (
 				69FB82C8253CC568003B7D02 /* Chore.swift in Sources */,
 				698D8D5D252B6C45001DB532 /* ChoreListView.swift in Sources */,
+				69A1753D254AF97D009B6E3C /* ChoreRowView.swift in Sources */,
 				69FB82D0253CC838003B7D02 /* AddChoreView.swift in Sources */,
 				698D8D5B252B6C45001DB532 /* EarnItApp.swift in Sources */,
 			);
