@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct EarnItApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  let context = DataStore.shared.persistentContainer.viewContext
+  var body: some Scene {
+    WindowGroup {
+      ContentView().environment(\.managedObjectContext, context)
     }
+  }
 }

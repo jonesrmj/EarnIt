@@ -9,7 +9,9 @@ import SwiftUI
 import Combine
 
 struct ChoreListView: View {
-  @ObservedObject var choreStore = ChoreStore()
+  @Environment(\.managedObjectContext) var context
+  @FetchRequest(entity: ChoreType.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \ChoreType.name, ascending: true)]) var choreTypes: FetchedResults<ChoreType>
+  
   @State var isAddChorePresented = false
   
   var body: some View {
@@ -17,16 +19,16 @@ struct ChoreListView: View {
       VStack {
         if #available(iOS 14.0, *) {
           List {
-            ForEach(self.choreStore.chores, id: \.id) {
-              ChoreRowView(chore: $0)
+            ForEach(self.choreTypes, id: \.name) {
+              ChoreTypeRowView(choreType: $0)
             }
             .onDelete(perform: self.deleteChore)
           }
           .listStyle(InsetGroupedListStyle())
         } else {
           List {
-            ForEach(self.choreStore.chores) { chore in
-              Text(chore.description + " | " + String(chore.amount))
+            ForEach(self.choreTypes, id: \.name) {
+              ChoreTypeRowView(choreType: $0)
             }
             .onDelete(perform: self.deleteChore)
           }
@@ -37,12 +39,6 @@ struct ChoreListView: View {
       .navigationBarItems(trailing:
         HStack {
           VStack {
-            Button(action: {}) {
-              Image(systemName: "envelope")
-            }
-            .padding(.horizontal, 30.0)
-          }
-          VStack {
             Button(action: { self.isAddChorePresented.toggle() }) {
               Image(systemName: "plus")
             }
@@ -51,20 +47,34 @@ struct ChoreListView: View {
       )
     }
     .sheet(isPresented: self.$isAddChorePresented) {
-      AddChoreView(isAddChorePresented: self.$isAddChorePresented) { description, amount in
-        self.addChore(description: description, amount: amount)
+      AddChoreView(isAddChorePresented: self.$isAddChorePresented) { name, amount in
+        self.addChore(name: name, amount: amount)
         self.isAddChorePresented = false
       }
     }
   }
   
-  func deleteChore(at offSets: IndexSet) {
-    choreStore.chores.remove(atOffsets: offSets)
+  func deleteChore(at offsets: IndexSet) {
+    offsets.forEach { index in
+      let choreType = self.choreTypes[index]
+      self.context.delete(choreType)
+    }
+    saveContext()
   }
   
-  func addChore(description: String, amount: Double) {
-    let newChore = Chore(id: String(choreStore.chores.count + 1), description: description, amount: amount)
-    choreStore.chores.append(newChore)
+  func addChore(name: String, amount: Double) {
+    let newChore = ChoreType(context: context)
+    newChore.name = name
+    newChore.amount = amount
+    saveContext()
+  }
+  
+  func saveContext() {
+    do {
+      try context.save()
+    } catch {
+      print("Error saving managed object context: \(error)")
+    }
   }
 }
 

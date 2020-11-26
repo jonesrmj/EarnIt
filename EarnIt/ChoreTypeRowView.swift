@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ChoreRowView: View {
-  let chore: Chore
+struct ChoreTypeRowView: View {
+  let choreType: ChoreType
   
   var currencyFormatter: NumberFormatter = {
     let f = NumberFormatter()
@@ -19,10 +19,10 @@ struct ChoreRowView: View {
   
   var body: some View {
     VStack(alignment: .leading) {
-      Text(chore.description)
+      Text(choreType.name ?? "")
         .font(.subheadline)
         .padding(.bottom, 5.0)
-      Text("$" + String(chore.amount))
+      Text("$" + String(choreType.amount))
         .font(.caption)
     }
     .padding(.vertical, 10.0)

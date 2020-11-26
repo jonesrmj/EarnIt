@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct AddChoreView: View {
-  @ObservedObject var choreStore = ChoreStore()
-  @State var newChoreDescription : String = ""
-  @State var newChoreAmount : Double = 0.0
+  @State var choreTypeName : String = ""
+  @State var choreTypeAmount : Double = 0.0
   
   @Binding var isAddChorePresented: Bool
   
   var currencyFormatter: NumberFormatter = {
     let f = NumberFormatter()
+    // allow no currency symbol, extra digits, etc
     f.isLenient = true
     f.numberStyle = .currency
     return f
@@ -26,11 +26,11 @@ struct AddChoreView: View {
   var body: some View {
     NavigationView {
       Form {
-        Section(header: Text("Description").padding(.top, 25)) {
-          TextField("Description", text: self.$newChoreDescription)
+        Section(header: Text("Name").padding(.top, 25)) {
+          TextField("Name", text: self.$choreTypeName)
         }
         Section(header: Text("Amount")) {
-          TextField("Amount", value: $newChoreAmount, formatter: currencyFormatter)
+          TextField("Amount", value: $choreTypeAmount, formatter: currencyFormatter)
         }
         Button(action: {
           addNewChore()
@@ -48,14 +48,14 @@ struct AddChoreView: View {
   }
   
   func addNewChore() {
-    onComplete(newChoreDescription, newChoreAmount)
+    onComplete(choreTypeName, choreTypeAmount)
   }
 }
 
 /*
-struct AddChoreView_Previews: PreviewProvider {
-  static var previews: some View {
-    AddChoreView()
-  }
-}
-*/
+ struct AddChoreView_Previews: PreviewProvider {
+ static var previews: some View {
+ AddChoreView()
+ }
+ }
+ */

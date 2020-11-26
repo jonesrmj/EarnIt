@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+  @Environment(\.managedObjectContext) var context
+  
   var body: some View {
+    HStack {
     TabView {
-      ChoreListView()
+      ChoreListView().environment(\.managedObjectContext, context)
         .tabItem {
           Image(systemName: "list.bullet")
           Text("Chores")
+      }
+      CompletedChoreListView().environment(\.managedObjectContext, context)
+        .tabItem {
+          Image(systemName: "text.badge.checkmark")
+          Text("Completed Chores")
+        }
       }
     }
   }
