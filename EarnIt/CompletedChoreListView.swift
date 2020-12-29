@@ -11,6 +11,10 @@ struct CompletedChoreListView: View {
   @Environment(\.managedObjectContext) var context
   @FetchRequest(entity: CompletedChore.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \CompletedChore.completedDate, ascending: false)]) var completedChores: FetchedResults<CompletedChore>
   
+  var sum: Double {
+    completedChores.reduce(0) { $0 + $1.amount }
+  }
+  
   var body: some View {
     NavigationView {
       VStack {
@@ -32,7 +36,7 @@ struct CompletedChoreListView: View {
           .listStyle(InsetGroupedListStyle())
         }
       }
-      .navigationBarTitle(Text("$0.00 Earned"))
+      .navigationBarTitle(Text("$" + String(sum) + " Earned"))
       .navigationBarItems(trailing:
         HStack {
           VStack {
