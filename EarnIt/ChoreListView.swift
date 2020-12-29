@@ -10,7 +10,7 @@ import Combine
 
 struct ChoreListView: View {
   @Environment(\.managedObjectContext) var context
-  @FetchRequest(entity: ChoreType.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \ChoreType.name, ascending: true)]) var choreTypes: FetchedResults<ChoreType>
+  @FetchRequest(entity: Chore.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Chore.name, ascending: true)]) var chores: FetchedResults<Chore>
   
   @State var isAddChorePresented = false
   
@@ -19,16 +19,16 @@ struct ChoreListView: View {
       VStack {
         if #available(iOS 14.0, *) {
           List {
-            ForEach(self.choreTypes, id: \.name) {
-              ChoreTypeRowView(choreType: $0)
+            ForEach(self.chores, id: \.name) {
+              ChoreRowView(chore: $0)
             }
             .onDelete(perform: self.deleteChore)
           }
           .listStyle(InsetGroupedListStyle())
         } else {
           List {
-            ForEach(self.choreTypes, id: \.name) {
-              ChoreTypeRowView(choreType: $0)
+            ForEach(self.chores, id: \.name) {
+              ChoreRowView(chore: $0)
             }
             .onDelete(perform: self.deleteChore)
           }
@@ -56,14 +56,14 @@ struct ChoreListView: View {
   
   func deleteChore(at offsets: IndexSet) {
     offsets.forEach { index in
-      let choreType = self.choreTypes[index]
-      self.context.delete(choreType)
+      let chore = self.chores[index]
+      self.context.delete(chore)
     }
     saveContext()
   }
   
   func addChore(name: String, amount: Double) {
-    let newChore = ChoreType(context: context)
+    let newChore = Chore(context: context)
     newChore.name = name
     newChore.amount = amount
     saveContext()

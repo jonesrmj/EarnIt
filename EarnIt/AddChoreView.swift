@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AddChoreView: View {
-  @State var choreTypeName : String = ""
-  @State var choreTypeAmount : Double = 0.0
+  @State var choreName : String = ""
+  @State var choreAmount : Double = 0.0
   
   @Binding var isAddChorePresented: Bool
   
@@ -27,10 +27,10 @@ struct AddChoreView: View {
     NavigationView {
       Form {
         Section(header: Text("Name").padding(.top, 25)) {
-          TextField("Name", text: self.$choreTypeName)
+          TextField("Name", text: self.$choreName)
         }
         Section(header: Text("Amount")) {
-          TextField("Amount", value: $choreTypeAmount, formatter: currencyFormatter)
+          TextField("Amount", value: $choreAmount, formatter: currencyFormatter)
         }
         Button(action: {
           addNewChore()
@@ -48,7 +48,7 @@ struct AddChoreView: View {
   }
   
   func addNewChore() {
-    onComplete(choreTypeName, choreTypeAmount)
+    onComplete(choreName, choreAmount)
   }
 }
 

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6900BC1C257043E700C6BE9A /* ChoreType+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6900BC1B257043E700C6BE9A /* ChoreType+CoreData.swift */; };
 		690262A42570388B0064854B /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690262A32570388B0064854B /* DataStore.swift */; };
+		698776DB259A996900DA4629 /* CompletedChoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698776DA259A996900DA4629 /* CompletedChoreRowView.swift */; };
 		698D8D5B252B6C45001DB532 /* EarnItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D8D5A252B6C45001DB532 /* EarnItApp.swift */; };
 		698D8D5D252B6C45001DB532 /* ChoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D8D5C252B6C45001DB532 /* ChoreListView.swift */; };
 		698D8D5F252B6C46001DB532 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 698D8D5E252B6C46001DB532 /* Assets.xcassets */; };
@@ -16,7 +16,7 @@
 		698D8D6D252B6C46001DB532 /* EarnItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D8D6C252B6C46001DB532 /* EarnItTests.swift */; };
 		698D8D78252B6C46001DB532 /* EarnItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D8D77252B6C46001DB532 /* EarnItUITests.swift */; };
 		698F419B256BFEC8007FD3B9 /* CompletedChoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F419A256BFEC8007FD3B9 /* CompletedChoreListView.swift */; };
-		69A1753D254AF97D009B6E3C /* ChoreTypeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1753C254AF97D009B6E3C /* ChoreTypeRowView.swift */; };
+		69A1753D254AF97D009B6E3C /* ChoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1753C254AF97D009B6E3C /* ChoreRowView.swift */; };
 		69DCDFF9254B97A700BBBFF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCDFF8254B97A700BBBFF0 /* ContentView.swift */; };
 		69F0AA0B256F253A008A60D4 /* EarnItDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69F0AA09256F253A008A60D4 /* EarnItDataModel.xcdatamodeld */; };
 		69FB82D0253CC838003B7D02 /* AddChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FB82CF253CC838003B7D02 /* AddChoreView.swift */; };
@@ -40,8 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6900BC1B257043E700C6BE9A /* ChoreType+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChoreType+CoreData.swift"; sourceTree = "<group>"; };
 		690262A32570388B0064854B /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		698776DA259A996900DA4629 /* CompletedChoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChoreRowView.swift; sourceTree = "<group>"; };
 		698D8D57252B6C45001DB532 /* EarnIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarnIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		698D8D5A252B6C45001DB532 /* EarnItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarnItApp.swift; sourceTree = "<group>"; };
 		698D8D5C252B6C45001DB532 /* ChoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreListView.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		698D8D77252B6C46001DB532 /* EarnItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarnItUITests.swift; sourceTree = "<group>"; };
 		698D8D79252B6C46001DB532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		698F419A256BFEC8007FD3B9 /* CompletedChoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChoreListView.swift; sourceTree = "<group>"; };
-		69A1753C254AF97D009B6E3C /* ChoreTypeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreTypeRowView.swift; sourceTree = "<group>"; };
+		69A1753C254AF97D009B6E3C /* ChoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRowView.swift; sourceTree = "<group>"; };
 		69DCDFF8254B97A700BBBFF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		69F0AA0A256F253A008A60D4 /* EarnItDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EarnItDataModel.xcdatamodel; sourceTree = "<group>"; };
 		69FB82CF253CC838003B7D02 /* AddChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreView.swift; sourceTree = "<group>"; };
@@ -113,14 +113,14 @@
 				690262A32570388B0064854B /* DataStore.swift */,
 				698D8D5C252B6C45001DB532 /* ChoreListView.swift */,
 				698F419A256BFEC8007FD3B9 /* CompletedChoreListView.swift */,
-				69A1753C254AF97D009B6E3C /* ChoreTypeRowView.swift */,
+				69A1753C254AF97D009B6E3C /* ChoreRowView.swift */,
+				698776DA259A996900DA4629 /* CompletedChoreRowView.swift */,
 				69FB82CF253CC838003B7D02 /* AddChoreView.swift */,
 				69DCDFF8254B97A700BBBFF0 /* ContentView.swift */,
 				698D8D5E252B6C46001DB532 /* Assets.xcassets */,
 				698D8D63252B6C46001DB532 /* Info.plist */,
 				698D8D60252B6C46001DB532 /* Preview Content */,
 				69F0AA09256F253A008A60D4 /* EarnItDataModel.xcdatamodeld */,
-				6900BC1B257043E700C6BE9A /* ChoreType+CoreData.swift */,
 			);
 			path = EarnIt;
 			sourceTree = "<group>";
@@ -280,12 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				698776DB259A996900DA4629 /* CompletedChoreRowView.swift in Sources */,
 				698D8D5D252B6C45001DB532 /* ChoreListView.swift in Sources */,
 				69F0AA0B256F253A008A60D4 /* EarnItDataModel.xcdatamodeld in Sources */,
 				69DCDFF9254B97A700BBBFF0 /* ContentView.swift in Sources */,
-				69A1753D254AF97D009B6E3C /* ChoreTypeRowView.swift in Sources */,
+				69A1753D254AF97D009B6E3C /* ChoreRowView.swift in Sources */,
 				698F419B256BFEC8007FD3B9 /* CompletedChoreListView.swift in Sources */,
-				6900BC1C257043E700C6BE9A /* ChoreType+CoreData.swift in Sources */,
 				69FB82D0253CC838003B7D02 /* AddChoreView.swift in Sources */,
 				690262A42570388B0064854B /* DataStore.swift in Sources */,
 				698D8D5B252B6C45001DB532 /* EarnItApp.swift in Sources */,
