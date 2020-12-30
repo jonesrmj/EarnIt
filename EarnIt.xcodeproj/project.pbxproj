@@ -17,6 +17,7 @@
 		698D8D78252B6C46001DB532 /* EarnItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698D8D77252B6C46001DB532 /* EarnItUITests.swift */; };
 		698F419B256BFEC8007FD3B9 /* CompletedChoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698F419A256BFEC8007FD3B9 /* CompletedChoreListView.swift */; };
 		69A1753D254AF97D009B6E3C /* ChoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A1753C254AF97D009B6E3C /* ChoreRowView.swift */; };
+		69CC3F83259D1A1F00442507 /* MailCompose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CC3F82259D1A1F00442507 /* MailCompose.swift */; };
 		69DCDFF9254B97A700BBBFF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DCDFF8254B97A700BBBFF0 /* ContentView.swift */; };
 		69F0AA0B256F253A008A60D4 /* EarnItDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 69F0AA09256F253A008A60D4 /* EarnItDataModel.xcdatamodeld */; };
 		69FB82D0253CC838003B7D02 /* AddChoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FB82CF253CC838003B7D02 /* AddChoreView.swift */; };
@@ -56,6 +57,7 @@
 		698D8D79252B6C46001DB532 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		698F419A256BFEC8007FD3B9 /* CompletedChoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedChoreListView.swift; sourceTree = "<group>"; };
 		69A1753C254AF97D009B6E3C /* ChoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoreRowView.swift; sourceTree = "<group>"; };
+		69CC3F82259D1A1F00442507 /* MailCompose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCompose.swift; sourceTree = "<group>"; };
 		69DCDFF8254B97A700BBBFF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		69F0AA0A256F253A008A60D4 /* EarnItDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EarnItDataModel.xcdatamodel; sourceTree = "<group>"; };
 		69FB82CF253CC838003B7D02 /* AddChoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChoreView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				698F419A256BFEC8007FD3B9 /* CompletedChoreListView.swift */,
 				69A1753C254AF97D009B6E3C /* ChoreRowView.swift */,
 				698776DA259A996900DA4629 /* CompletedChoreRowView.swift */,
+				69CC3F82259D1A1F00442507 /* MailCompose.swift */,
 				69FB82CF253CC838003B7D02 /* AddChoreView.swift */,
 				69DCDFF8254B97A700BBBFF0 /* ContentView.swift */,
 				698D8D5E252B6C46001DB532 /* Assets.xcassets */,
@@ -283,6 +286,7 @@
 				698776DB259A996900DA4629 /* CompletedChoreRowView.swift in Sources */,
 				698D8D5D252B6C45001DB532 /* ChoreListView.swift in Sources */,
 				69F0AA0B256F253A008A60D4 /* EarnItDataModel.xcdatamodeld in Sources */,
+				69CC3F83259D1A1F00442507 /* MailCompose.swift in Sources */,
 				69DCDFF9254B97A700BBBFF0 /* ContentView.swift in Sources */,
 				69A1753D254AF97D009B6E3C /* ChoreRowView.swift in Sources */,
 				698F419B256BFEC8007FD3B9 /* CompletedChoreListView.swift in Sources */,
@@ -447,6 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"EarnIt/Preview Content\"";
+				DEVELOPMENT_TEAM = LTV6UMPPWS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = EarnIt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -468,6 +473,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"EarnIt/Preview Content\"";
+				DEVELOPMENT_TEAM = LTV6UMPPWS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = EarnIt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

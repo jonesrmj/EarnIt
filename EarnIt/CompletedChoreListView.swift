@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct CompletedChoreListView: View {
   @Environment(\.managedObjectContext) var context
   @FetchRequest(entity: CompletedChore.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \CompletedChore.completedDate, ascending: false)]) var completedChores: FetchedResults<CompletedChore>
+  
+  @State var isEmailPresented = false
+  @State var result: Result<MFMailComposeResult, Error>? = nil
   
   var sum: Double {
     completedChores.reduce(0) { $0 + $1.amount }
@@ -40,12 +44,18 @@ struct CompletedChoreListView: View {
       .navigationBarItems(trailing:
         HStack {
           VStack {
-            Button(action: {}) {
+            Button(action: {
+              self.isEmailPresented.toggle()
+            }) {
               Image(systemName: "envelope")
             }
+            .disabled(!MFMailComposeViewController.canSendMail() || completedChores.isEmpty)
           }
         }
       )
+    }
+    .sheet(isPresented: $isEmailPresented) {
+      MailView(result: self.$result)
     }
   }
   
