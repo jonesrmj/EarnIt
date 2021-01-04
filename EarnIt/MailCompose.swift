@@ -11,8 +11,10 @@ import MessageUI
 struct MailView: UIViewControllerRepresentable {
   @FetchRequest(entity: CompletedChore.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \CompletedChore.completedDate, ascending: false)]) var completedChores: FetchedResults<CompletedChore>
   @Environment(\.presentationMode) var presentation
-  @Binding var result: Result<MFMailComposeResult, Error>?
   
+  @Binding var result: Result<MFMailComposeResult, Error>?
+  @Binding var emailString: String
+    
   var sum: Double {
     completedChores.reduce(0) { $0 + $1.amount }
   }
@@ -51,7 +53,7 @@ struct MailView: UIViewControllerRepresentable {
     let vc = MFMailComposeViewController()
     vc.mailComposeDelegate = context.coordinator
     vc.setSubject("I Earned It!")
-    vc.setMessageBody("Chores...", isHTML: false)
+    vc.setMessageBody("\(self.emailString)", isHTML: false)
     return vc
   }
   

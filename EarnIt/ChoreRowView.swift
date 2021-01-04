@@ -34,10 +34,11 @@ struct ChoreRowView: View {
   }
   
   func addCompletedChore(name: String, amount: Double) {
+    let now = Date()
     let newChore = CompletedChore(context: context)
     newChore.name = name
     newChore.amount = amount
-    newChore.completedDate = Date()
+    newChore.completedDate = now
     saveContext()
   }
   
